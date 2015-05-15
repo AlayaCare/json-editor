@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 
           // All the themes and iconlibs
           'src/theme.js',
-          'src/themes/*.js',
+          'src/themes/alaya.js',
           'src/iconlib.js',
           'src/iconlibs/*.js',
 

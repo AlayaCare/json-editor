@@ -1,5 +1,5 @@
 // Set the default theme
-JSONEditor.defaults.theme = 'html';
+JSONEditor.defaults.theme = 'alaya';
 
 // Set the default template engine
 JSONEditor.defaults.template = 'default';
