@@ -41,6 +41,38 @@
                 2010,2011,2012,2013,2014
               ],
               default: 2008
+            },
+            "pets": {
+              "type": "array",
+              "format": "multiple",
+              "title": "Pets",
+              "uniqueItems": true,
+              "items": {
+                "type": "object",
+                "title": "Pet",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "cat",
+                      "dog",
+                      "bird",
+                      "reptile",
+                      "other"
+                    ],
+                    "default": "dog"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "default": [
+                {
+                  "type": "dog",
+                  "name": "Walter"
+                }
+              ]
             }
           }
         }

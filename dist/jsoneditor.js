@@ -4452,13 +4452,6 @@ JSONEditor.defaults.editors.multiple = JSONEditor.AbstractEditor.extend({
       self.switchEditor(self.display_text.indexOf(this.value));
       self.onChange(true);
     });
-    this.switcher.style.marginBottom = 0;
-    this.switcher.style.width = 'auto';
-    this.switcher.style.display = 'inline-block';
-    this.switcher.style.marginLeft = '5px';
-
-    this.editor_holder = document.createElement('div');
-    container.appendChild(this.editor_holder);
 
     this.switcher_options = this.theme.getSwitcherOptions(this.switcher);
     $each(this.types,function(i,type) {
@@ -4582,10 +4575,6 @@ JSONEditor.defaults.editors["enum"] = JSONEditor.AbstractEditor.extend({
     // Switcher
     this.switcher = this.theme.getSwitcher(this.select_options);
     this.container.appendChild(this.switcher);
-    this.switcher.style.width = 'auto';
-    this.switcher.style.display = 'inline-block';
-    this.switcher.style.marginLeft = '5px';
-    this.switcher.style.marginBottom = 0;
 
     // Display area
     this.display_area = this.theme.getIndentedPanel();
