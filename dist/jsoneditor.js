@@ -4435,6 +4435,9 @@ JSONEditor.defaults.editors.multiple = JSONEditor.AbstractEditor.extend({
       self.onChange(true);
     });
 
+    this.editor_holder = document.createElement('div');
+    container.appendChild(this.editor_holder);
+    
     this.switcher_options = this.theme.getSwitcherOptions(this.switcher);
     $each(this.types,function(i,type) {
       self.editors[i] = false;
