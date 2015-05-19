@@ -3762,20 +3762,6 @@ JSONEditor.defaults.editors.array = JSONEditor.AbstractEditor.extend({
       self.onChange(true);
     });
     self.controls.appendChild(this.remove_all_rows_button);
-
-    if(self.tabs) {
-      this.add_row_button.style.width = '100%';
-      this.add_row_button.style.textAlign = 'left';
-      this.add_row_button.style.marginBottom = '3px';
-      
-      this.delete_last_row_button.style.width = '100%';
-      this.delete_last_row_button.style.textAlign = 'left';
-      this.delete_last_row_button.style.marginBottom = '3px';
-      
-      this.remove_all_rows_button.style.width = '100%';
-      this.remove_all_rows_button.style.textAlign = 'left';
-      this.remove_all_rows_button.style.marginBottom = '3px';
-    }
   },
   showValidationErrors: function(errors) {
     var self = this;
@@ -3945,8 +3931,6 @@ JSONEditor.defaults.editors.table = JSONEditor.defaults.editors.array.extend({
       ret.row = row;
       ret.table_controls = this.theme.getButtonHolder();
       ret.controls_cell.appendChild(ret.table_controls);
-      ret.table_controls.style.margin = 0;
-      ret.table_controls.style.padding = 0;
     }
     
     return ret;
