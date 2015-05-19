@@ -2735,7 +2735,7 @@ JSONEditor.defaults.editors.object = JSONEditor.AbstractEditor.extend({
     // Disable the rest of the form while editing JSON
     this.disable();
     
-    this.editjson_holder.style.display = 'block';
+    this.editjson_holder.parentNode.classList.add('open');
     this.editjson_button.disabled = false;
     this.editing_json = true;
   },
@@ -2743,7 +2743,7 @@ JSONEditor.defaults.editors.object = JSONEditor.AbstractEditor.extend({
     if(!this.editjson_holder) return;
     if(!this.editing_json) return;
     
-    this.editjson_holder.style.display = 'none';
+    this.editjson_holder.parentNode.classList.remove('open');
     this.enable();
     this.editing_json = false;
   },
@@ -2822,14 +2822,14 @@ JSONEditor.defaults.editors.object = JSONEditor.AbstractEditor.extend({
     
     this.adding_property = true;
     this.addproperty_button.disabled = false;
-    this.addproperty_holder.style.display = 'block';
+    this.editjson_holder.parentNode.classList.add('open');
     this.refreshAddProperties();
   },
   hideAddProperty: function() {
     if(!this.addproperty_holder) return;
     if(!this.adding_property) return;
     
-    this.addproperty_holder.style.display = 'none';
+    this.editjson_holder.parentNode.classList.remove('open');
     this.enable();
     
     this.adding_property = false;
@@ -5772,7 +5772,7 @@ JSONEditor.defaults.themes.alaya = JSONEditor.AbstractTheme.extend({
   },
   setGridColumnSize: function(el,size) {
     //el.className = 'col-md-'+size;
-    el.className = 'col-md-12';
+    el.className = 'columns';
   },
   afterInputReady: function(input) {
     if(input.controlgroup) return;
