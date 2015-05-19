@@ -5497,19 +5497,10 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getFloatRightLinkHolder: function() {
     var el = document.createElement('div');
-    el.style = el.style || {};
-    el.style.cssFloat = 'right';
-    el.style.marginLeft = '10px';
     return el;
   },
   getModal: function() {
     var el = document.createElement('div');
-    el.style.backgroundColor = 'white';
-    el.style.border = '1px solid black';
-    el.style.boxShadow = '3px 3px black';
-    el.style.position = 'absolute';
-    el.style.zIndex = '10';
-    el.style.display = 'none';
     return el;
   },
   getGridContainer: function() {
@@ -5535,16 +5526,12 @@ JSONEditor.AbstractTheme = Class.extend({
     return el;
   },
   disableHeader: function(header) {
-    header.style.color = '#ccc';
   },
   disableLabel: function(label) {
-    label.style.color = '#ccc';
   },
   enableHeader: function(header) {
-    header.style.color = '';
   },
   enableLabel: function(label) {
-    label.style.color = '';
   },
   getFormInputLabel: function(text) {
     var el = document.createElement('label');
@@ -5553,7 +5540,6 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getCheckboxLabel: function(text) {
     var el = this.getFormInputLabel(text);
-    el.style.fontWeight = 'normal';
     return el;
   },
   getHeader: function(text) {
@@ -5569,22 +5555,17 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getCheckbox: function() {
     var el = this.getFormInputField('checkbox');
-    el.style.display = 'inline-block';
-    el.style.width = 'auto';
     return el;
   },
   getMultiCheckboxHolder: function(controls,label,description) {
     var el = document.createElement('div');
 
     if(label) {
-      label.style.display = 'block';
       el.appendChild(label);
     }
 
     for(var i in controls) {
       if(!controls.hasOwnProperty(i)) continue;
-      controls[i].style.display = 'inline-block';
-      controls[i].style.marginRight = '20px';
       el.appendChild(controls[i]);
     }
 
@@ -5599,11 +5580,6 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getSwitcher: function(options) {
     var switcher = this.getSelectInput(options);
-    switcher.style.backgroundColor = 'transparent';
-    switcher.style.height = 'auto';
-    switcher.style.fontStyle = 'italic';
-    switcher.style.fontWeight = 'normal';
-    switcher.style.padding = '0 0 0 3px';
     return switcher;
   },
   getSwitcherOptions: function(switcher) {
@@ -5624,10 +5600,6 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getTextareaInput: function() {
     var el = document.createElement('textarea');
-    el.style = el.style || {};
-    el.style.width = '100%';
-    el.style.height = '300px';
-    el.style.boxSizing = 'border-box';
     return el;
   },
   getRangeInput: function(min,max,step) {
@@ -5661,10 +5633,6 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getIndentedPanel: function() {
     var el = document.createElement('div');
-    el.style = el.style || {};
-    el.style.paddingLeft = '10px';
-    el.style.marginLeft = '10px';
-    el.style.borderLeft = '1px solid #ccc';
     return el;
   },
   getChildEditorHolder: function() {
@@ -5725,8 +5693,6 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getErrorMessage: function(text) {
     var el = document.createElement('p');
-    el.style = el.style || {};
-    el.style.color = 'red';
     el.appendChild(document.createTextNode(text));
     return el;
   },
@@ -5740,7 +5706,7 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getTabHolder: function() {
     var el = document.createElement('div');
-    el.innerHTML = "<div style='float: left; width: 130px;' class='tabs'></div><div class='content' style='margin-left: 130px;'></div><div style='clear:both;'></div>";
+    el.innerHTML = "<div class='tabs'></div><div class='content'></div><div style='clear:both;'></div>";
     return el;
   },
   applyStyles: function(el,styles) {
@@ -5772,17 +5738,6 @@ JSONEditor.AbstractTheme = Class.extend({
     var el = document.createElement('div');
     el.appendChild(span);
     el.style = el.style || {};
-    this.applyStyles(el,{
-      border: '1px solid #ccc',
-      borderWidth: '1px 0 1px 1px',
-      textAlign: 'center',
-      lineHeight: '30px',
-      borderRadius: '5px',
-      borderBottomRightRadius: 0,
-      borderTopRightRadius: 0,
-      fontWeight: 'bold',
-      cursor: 'pointer'
-    });
     return el;
   },
   getTabContentHolder: function(tab_holder) {
@@ -5808,7 +5763,6 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getBlockLink: function() {
     var link = document.createElement('a');
-    link.style.display = 'block';
     return link;
   },
   getBlockLinkHolder: function() {
@@ -5821,7 +5775,6 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   createMediaLink: function(holder,link,media) {
     holder.appendChild(link);
-    media.style.width='100%';
     holder.appendChild(media);
   },
   createImageLink: function(holder,link,image) {
@@ -6024,8 +5977,6 @@ JSONEditor.defaults.iconlibs.bootstrap3 = JSONEditor.AbstractIconLib.extend({
     movedown: 'arrow-down'
   },
   icon_prefix: 'glyphicon glyphicon-'
-});
-
 });
 
 JSONEditor.defaults.templates["default"] = function() {
