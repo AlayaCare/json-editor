@@ -2735,7 +2735,7 @@ JSONEditor.defaults.editors.object = JSONEditor.AbstractEditor.extend({
     // Disable the rest of the form while editing JSON
     this.disable();
     
-    this.editjson_holder.style.display = '';
+    this.editjson_holder.style.display = 'block';
     this.editjson_button.disabled = false;
     this.editing_json = true;
   },
@@ -2786,13 +2786,11 @@ JSONEditor.defaults.editors.object = JSONEditor.AbstractEditor.extend({
     var checkbox, label, labelText, control;
 
     checkbox = self.theme.getCheckbox();
-    checkbox.style.width = 'auto';
 
     labelText = this.schema.properties[key].title ? this.schema.properties[key].title : key;
     label = self.theme.getCheckboxLabel(labelText);
 
     control = self.theme.getFormControl(label,checkbox);
-    //control.style.overflowY = 'hidden';
 
     this.insertPropertyControlUsingPropertyOrder(key, control, this.addproperty_list);
 
@@ -2824,7 +2822,7 @@ JSONEditor.defaults.editors.object = JSONEditor.AbstractEditor.extend({
     
     this.adding_property = true;
     this.addproperty_button.disabled = false;
-    this.addproperty_holder.style.display = '';
+    this.addproperty_holder.style.display = 'block';
     this.refreshAddProperties();
   },
   hideAddProperty: function() {
@@ -4437,7 +4435,7 @@ JSONEditor.defaults.editors.multiple = JSONEditor.AbstractEditor.extend({
 
     this.editor_holder = document.createElement('div');
     container.appendChild(this.editor_holder);
-    
+
     this.switcher_options = this.theme.getSwitcherOptions(this.switcher);
     $each(this.types,function(i,type) {
       self.editors[i] = false;
@@ -5484,6 +5482,7 @@ JSONEditor.AbstractTheme = Class.extend({
   },
   getModal: function() {
     var el = document.createElement('div');
+    el.className = 'dropdown-menu';
     return el;
   },
   getGridContainer: function() {
@@ -5772,7 +5771,8 @@ JSONEditor.defaults.themes.alaya = JSONEditor.AbstractTheme.extend({
     return el;
   },
   setGridColumnSize: function(el,size) {
-    el.className = 'col-md-'+size;
+    //el.className = 'col-md-'+size;
+    el.className = 'col-md-12';
   },
   afterInputReady: function(input) {
     if(input.controlgroup) return;
