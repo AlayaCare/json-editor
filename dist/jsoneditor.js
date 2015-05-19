@@ -2792,8 +2792,6 @@ JSONEditor.defaults.editors.object = JSONEditor.AbstractEditor.extend({
     label = self.theme.getCheckboxLabel(labelText);
 
     control = self.theme.getFormControl(label,checkbox);
-    control.style.paddingBottom = control.style.marginBottom = control.style.paddingTop = control.style.marginTop = 0;
-    control.style.height = 'auto';
     //control.style.overflowY = 'hidden';
 
     this.insertPropertyControlUsingPropertyOrder(key, control, this.addproperty_list);
@@ -4562,8 +4560,6 @@ JSONEditor.defaults.editors["enum"] = JSONEditor.AbstractEditor.extend({
 
     // Display area
     this.display_area = this.theme.getIndentedPanel();
-    this.display_area.style.paddingTop = 0;
-    this.display_area.style.paddingBottom = 0;
     this.container.appendChild(this.display_area);
     
     if(this.options.hide_display) this.display_area.style.display = "none";
@@ -4631,7 +4627,7 @@ JSONEditor.defaults.editors["enum"] = JSONEditor.AbstractEditor.extend({
       });
       
       if(Array.isArray(el)) ret = '<ol>'+ret+'</ol>';
-      else ret = "<ul style='margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;'>"+ret+'</ul>';
+      else ret = "<ul>"+ret+'</ul>';
 
       return ret;
     }
